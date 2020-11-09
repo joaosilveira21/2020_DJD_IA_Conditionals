@@ -1,0 +1,37 @@
+using System;
+
+namespace lostinthemap
+{
+    class Program
+    {
+
+        static void Main(string[] args)
+        {
+            Random r = new Random();
+
+            int posX = r.Next(501);
+            int posY = r.Next(501);
+            string message;
+
+            if (posY < 250) 
+            {
+                message = "TOP";
+            }
+            else
+            {
+                message = "BOTTOM";
+            }
+
+            if (posX < 250)
+            {
+                message += "-LEFT";
+            }
+            else
+            {
+                message += "-RIGHT";
+            }
+
+            Console.WriteLine("The player is on the -" + message + "- of the map!!");
+        }
+    }
+}
