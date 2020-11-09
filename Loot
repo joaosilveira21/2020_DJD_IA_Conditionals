@@ -1,0 +1,74 @@
+using System;
+
+namespace loot
+{
+    class Program
+    {
+
+        static void Main(string[] args)
+        {
+            Random r = new Random();
+
+            string item1Name = "Picolo";
+            string item1Rarity = "Common";
+            float item1Prob = 0.6f;
+
+            string item2Name = "Gohan";
+            string item2Rarity = "Uncommon";
+            float item2Prob = 0.3f;
+
+            string item3Name = "Goku";
+            string item3Rarity = "Rare";
+            float item3Prob = 0.1f;
+
+            Console.WriteLine("Look! It Seems like you found 2 drop bags!!");
+            Console.WriteLine("-------------------------------------------");
+
+            float randomOne = (float)r.NextDouble();
+            Console.WriteLine("1st Bag Value:" + randomOne);
+
+            if (randomOne <= item1Prob)
+            {
+                Console.WriteLine("Name:" + item1Name);
+                Console.WriteLine("Rarity:" + item1Rarity);
+            }
+            else
+            {
+                if (randomOne <= item1Prob + item2Prob)
+                {
+                    Console.WriteLine("Name:" + item2Name);
+                    Console.WriteLine("Rarity:" + item2Rarity);
+                }
+                else
+                {
+                    Console.WriteLine("Name:" + item3Name);
+                    Console.WriteLine("Rarity:" + item3Rarity);
+                }
+            }
+
+            float randomTwo = (float)r.NextDouble();
+            Console.WriteLine("2nd Bag Value:" + randomTwo);
+
+            if (randomTwo <= item1Prob)
+            {
+                Console.WriteLine("Name:" + item1Name);
+                Console.WriteLine("Rarity:" + item1Rarity);
+            }
+            else
+            {
+                if (randomTwo <= item1Prob + item2Prob)
+                {
+                    Console.WriteLine("Name:" + item2Name);
+                    Console.WriteLine("Rarity:" + item2Rarity);
+                }
+                else
+                {
+                    Console.WriteLine("Name:" + item3Name);
+                    Console.WriteLine("Rarity:" + item3Rarity);
+                }
+            }
+
+            Console.WriteLine("-------------------------------------------");
+        }
+    }
+}
