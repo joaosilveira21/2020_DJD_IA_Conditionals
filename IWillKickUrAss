@@ -1,0 +1,40 @@
+using System;
+
+namespace Iwillkickurass
+{
+    class Program
+    {
+
+        static void Main(string[] args)
+        {
+            Random r = new Random();
+
+            int p1Attack = r.Next(10, 51);
+            int p1HP = r.Next(100, 201);
+
+            int p2Attack = r.Next(10, 51);
+            int p2HP = r.Next(100, 201);
+
+            float turnsP1Lives = p1HP / p2Attack;
+            float turnsP2Lives = p2HP / p1Attack;
+
+            Console.WriteLine("----------PLAYER ONE STATS----------");
+            Console.WriteLine("Attack:" + p1Attack);
+            Console.WriteLine("Health:" + p1HP);
+            Console.WriteLine("------------------------------------");
+            Console.WriteLine("----------PLAYER TWO STATS----------");
+            Console.WriteLine("Attack:" + p2Attack);
+            Console.WriteLine("Health:" + p2HP);
+            Console.WriteLine("------------------------------------");
+
+            if (turnsP1Lives > turnsP2Lives)
+            {
+                Console.WriteLine("PLAYER ONE WINS!!");
+            }
+            else
+            {
+                Console.WriteLine("PLAYER TWO WINS!!");
+            }
+        }
+    }
+}
