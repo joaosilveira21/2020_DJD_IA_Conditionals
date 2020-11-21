@@ -1,0 +1,25 @@
+using System;
+
+namespace grinder
+{
+    class Program
+    {
+
+        static void Main(string[] args)
+        {
+            Random r = new Random();
+
+            int grinderBank = r.Next(1000, 100001);
+            int creatureDrop = r.Next(35, 66);
+            int kills = grinderBank / creatureDrop;
+
+            Console.WriteLine("Creatures Killed:" + kills);
+            Console.WriteLine("-------------------------");
+
+            if (kills > 1000)
+            {
+                Console.WriteLine("ACHIEVEMENT: Grinder");
+            }
+        }
+    }
+}
